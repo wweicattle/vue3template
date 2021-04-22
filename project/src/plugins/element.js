@@ -1,5 +1,6 @@
-import { ElButton } from 'element-plus'
+import { ElButton,ElSubmenu,ElCol,ElMenu,ElMenuItem,ElRow,ElIcon } from 'element-plus'
 
 export default (app) => {
-  app.use(ElButton)
+  console.log(app);
+  app.use(ElButton).use(ElSubmenu).use(ElCol).use(ElMenu).use(ElMenuItem).use(ElRow).use(ElIcon);
 }
