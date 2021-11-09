@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+
+    <body style='margin : 0px; overflow: hidden;'>
+        <a-scene embedded arjs='sourceType: webcam;'>
+            <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
+            <a-marker-camera preset='hiro'></a-marker-camera>
+        </a-scene>
+    </body>
+<!-- <body>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+        ios-src="https://modelviewer.dev/shared-assets/models/Astronaut.usdz" alt="A 3D model of an astronaut" ar
+        auto-rotate camera-controls></model-viewer>
+  
+</body> -->
+
+</html>
