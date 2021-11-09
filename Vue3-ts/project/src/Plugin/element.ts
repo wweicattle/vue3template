@@ -11,6 +11,12 @@ import {
   ElTableColumn,
   ElTabs,
   ElTabPane,
+  ElMenuItem,
+  ElMenuItemGroup,
+  ElSubMenu,
+  ElRadioButton,
+  ElRadioGroup,
+  ElMenu
 } from "element-plus";
 export default (app: any) => {
   console.log(app);
@@ -27,6 +33,13 @@ export default (app: any) => {
     .use(ElTableColumn)
     .use(ElTable)
     .use(ElTabs)
-    .use(ElTabPane);
+    .use(ElTabPane)
+    .use(ElButton)
+    .use(ElMenuItemGroup)
+    .use(ElRadioGroup)
+    .use(ElRadioButton)
+    .use(ElSubMenu)
+    .use(ElMenuItem)
+    .use(ElMenu);
 };
 // impo

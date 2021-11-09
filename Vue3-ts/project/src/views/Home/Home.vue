@@ -3,7 +3,10 @@
     <!-- 在这里进行布局得设计 -->
     <!--  -->
     <el-container>
-      <el-aside width="200px">Aside</el-aside>
+      <el-aside width="200px">
+        <left-menu />
+
+      </el-aside>
       <el-main>
         <el-header height="50px"> header </el-header>
         <el-tabs
@@ -30,9 +33,17 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { ref, reactive, onMounted, watch, computed, watchEffect } from "vue";
+
+
+import LeftMenu from "./child/LeftMenu.vue";
+
+
+
 export default defineComponent({
   name: "Home",
-  components: {},
+  components: {
+    LeftMenu
+  },
   setup() {
     console.log(32323);
     const editableTabsValue = ref("2");
@@ -85,9 +96,6 @@ export default defineComponent({
   },
 });
 </script>
-
-
-
 
 <style lang="scss" scoped>
 .home {
