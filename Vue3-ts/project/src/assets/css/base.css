@@ -1,4 +1,6 @@
 @import "./normalize.css";
+@import "./iconfont.css";
+
 
 :root {
   --font-size: 13px;

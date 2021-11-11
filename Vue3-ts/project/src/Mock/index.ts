@@ -98,13 +98,9 @@ Mock.mock("/api/auth/user/userInfo", "post", (option: any) => {
   };
 });
 
-Mock.mock("/api/auth/user/register", "post", () => ({
-  status: 0,
-  data: {},
-  success: true,
-  message: "成功",
-}));
-//
+
+
+
 Mock.mock("/api/auth/permission/routes", "post", (option: any) => {
   const { roleName } = JSON.parse(option.body);
   if (roleName === "超级管理员") {

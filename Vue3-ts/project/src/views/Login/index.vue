@@ -73,13 +73,18 @@ export default defineComponent({
           // 开始验证用户名与密码
           let useRes = await axios.postLogin(ruleForm);
           console.log(useRes);
-          if (useRes.data.accessToken) {
+          if (useRes?.data?.accessToken) {
             localStorage.setItem("token", useRes.data.accessToken);
             ElMessage({
               type: "success",
               message: "登录成功！",
             });
             route.push("/home");
+          }else{
+              ElMessage({
+              type: "error",
+              message: useRes.message,
+            });
           }
           return true;
         } else {

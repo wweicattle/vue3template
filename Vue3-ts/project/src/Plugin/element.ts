@@ -16,7 +16,9 @@ import {
   ElSubMenu,
   ElRadioButton,
   ElRadioGroup,
-  ElMenu
+  ElMenu,
+  ElBreadcrumb,
+  ElBreadcrumbItem,
 } from "element-plus";
 export default (app: any) => {
   console.log(app);
@@ -40,6 +42,8 @@ export default (app: any) => {
     .use(ElRadioButton)
     .use(ElSubMenu)
     .use(ElMenuItem)
-    .use(ElMenu);
+    .use(ElMenu)
+    .use(ElBreadcrumb)
+    .use(ElBreadcrumbItem);
 };
 // impo

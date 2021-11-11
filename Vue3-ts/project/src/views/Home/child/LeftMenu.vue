@@ -11,11 +11,10 @@
     >
       <el-sub-menu index="1">
         <template #title>
-          <el-icon><location /></el-icon>
           <span>首页</span>
         </template>
         <el-menu-item-group title="Group One">
-          <el-menu-item index="1-1">item one</el-menu-item>
+          <el-menu-item index="1-1" @click="routepush">item one</el-menu-item>
           <el-menu-item index="1-2">item one</el-menu-item>
         </el-menu-item-group>
         <el-menu-item-group title="Group Two">
@@ -26,41 +25,28 @@
           <el-menu-item index="1-4-1">item one</el-menu-item>
         </el-sub-menu>
       </el-sub-menu>
-      <el-menu-item index="2">
-        <el-icon><icon-menu /></el-icon>
+      <el-menu-item index="2" @click="routepushs">
         <span>仪表盘</span>
       </el-menu-item>
       <el-menu-item index="3">
-        <el-icon><document /></el-icon>
         <span>引导</span>
       </el-menu-item>
       <el-menu-item index="4">
-        <el-icon><setting /></el-icon>
         <span>复制文本</span>
       </el-menu-item>
 
-      <el-menu-item index="5">
-        <el-icon><setting /></el-icon>
+      <el-menu-item index="4">
         <span>导出zip</span>
       </el-menu-item>
 
-      <el-menu-item index="6">
-        <el-icon><setting /></el-icon>
+      <el-menu-item index="4">
         <span>角色管理</span>
       </el-menu-item>
-      <el-menu-item index="7">
-        <el-icon><setting /></el-icon>
+      <el-menu-item index="4">
         <span>菜单管理</span>
       </el-menu-item>
-
-      <el-menu-item index="8">
-        <el-icon><setting /></el-icon>
+      <el-menu-item index="4">
         <span>项目看板</span>
-      </el-menu-item>
-
-      <el-menu-item index="9">
-        <el-icon><setting /></el-icon>
-        <span>Excel</span>
       </el-menu-item>
     </el-menu>
   </div>
@@ -68,10 +54,14 @@
 
 <script lang="ts">
 import { defineComponent, ref } from "vue";
+import { RouteLocationMatched, useRoute, useRouter } from "vue-router";
 
 export default defineComponent({
   components: {},
   setup() {
+    // 自己维护的一个路由
+    // const routesArr = [{}, {}];
+    const useRouters = useRouter();
     const isCollapse = ref(true);
     const handleOpen = (key: any, keyPath: any) => {
       console.log(key, keyPath);
@@ -79,10 +69,19 @@ export default defineComponent({
     const handleClose = (key: any, keyPath: any) => {
       console.log(key, keyPath);
     };
+
+    const routepush = () => {
+      useRouters.push("/home/homes");
+    };
+    const routepushs = () => {
+      useRouters.push("/home/table");
+    };
     return {
       isCollapse,
       handleOpen,
       handleClose,
+      routepush,
+      routepushs,
     };
   },
 });
@@ -90,7 +89,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .left-container {
-  border: 1px solid red;
+  // border: 1px solid red;
   //   height: 100%;
 
   //   overflow: hidden;
