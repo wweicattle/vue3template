@@ -28,7 +28,7 @@
       <el-menu-item index="2" @click="routepushs">
         <span>仪表盘</span>
       </el-menu-item>
-      <el-menu-item index="3">
+      <el-menu-item index="3" @click="routepushss">
         <span>引导</span>
       </el-menu-item>
       <el-menu-item index="4">
@@ -76,12 +76,17 @@ export default defineComponent({
     const routepushs = () => {
       useRouters.push("/home/table");
     };
+     const routepushss = () => {
+      useRouters.push("/home/sort");
+    };
     return {
       isCollapse,
       handleOpen,
       handleClose,
       routepush,
       routepushs,
+      routepushss,
+
     };
   },
 });

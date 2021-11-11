@@ -35,7 +35,7 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         name: "/home/sort",
-        path: "table",
+        path: "sort",
         component: () => import(/* webpackChunkName: "about" */ "../views/Sort/index.vue"),
       },
       {

@@ -14,7 +14,6 @@
       >
         <div class="content-tab">
           <div @click="changeOpe">lorem</div>
-          <el-button @click="addNavBtn">{{ope}}add nav</el-button>
           <router-view></router-view>
         </div>
       </el-tab-pane>
@@ -34,20 +33,12 @@ export default defineComponent({
   components: {},
   props: {
     navlist: {
-      type: Array,
+      type: Array
     },
   },
-  emits: ["addNavs"],
+  // emits: ["addNavs"],
   setup(props, { emit }) {
 
-
-
-    let sa=ref("32323");
-    sa.value.split("3")
-    // console.log(sa.split(","));
-
-    
-    
     // nav-tab 操作
     let g = navOpr(props, emit);
     let gf=findData();
